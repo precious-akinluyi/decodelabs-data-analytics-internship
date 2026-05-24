@@ -1,0 +1,67 @@
+CREATE database DecodeLab_Internship;
+USE decodelab_internship;
+
+SELECT SUM(`Total Price`) AS Total_Revenue
+FROM `data analytics_`;
+
+SELECT SUM(Quantity) AS Total_Quantity
+FROM `data analytics_`;
+
+
+SELECT Product,
+SUM(`Total Price`) AS Total_Sales
+FROM `data analytics_`
+GROUP BY Product;
+
+
+SELECT Product,
+SUM(Quantity) AS Total_Quantity
+FROM `data analytics_`
+GROUP BY Product;
+
+SELECT Product,
+SUM(Quantity) AS Total_Quantity
+FROM `data analytics_`
+GROUP BY Product
+ORDER BY Total_Quantity DESC;
+
+
+SELECT AVG(`Total Price`) AS Avg_Order_Value
+FROM `data analytics_`;
+
+
+SELECT *
+FROM `data analytics_`
+WHERE `Payment Method` = 'Credit Card';
+
+
+SELECT COUNT(*) AS Total_Orders
+FROM `data analytics_`;
+
+
+SELECT `Order Status`,
+COUNT(*) AS Total_Orders
+FROM `data analytics_`
+GROUP BY `Order Status`;
+
+
+SELECT *
+FROM `data analytics_`
+ORDER BY `Total Price` DESC
+LIMIT 5;
+
+
+SELECT `Referral Source`,
+SUM(`Total Price`) AS Revenue
+FROM `data analytics_`
+GROUP BY `Referral Source`;
+
+
+SELECT *
+FROM `data analytics_`
+WHERE Quantity > 3;
+
+
+SELECT SUM(`Total Price`) AS Delivered_Revenue
+FROM `data analytics_`
+WHERE `Order Status` = 'Delivered';
